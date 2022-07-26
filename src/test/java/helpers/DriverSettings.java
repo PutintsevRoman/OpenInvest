@@ -12,9 +12,9 @@ public class DriverSettings {
 
     public static void configure() {
 
-        Configuration.browser = System.getProperty("browser","chrome");
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -30,8 +30,8 @@ public class DriverSettings {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-       // String remoteDriverUrl = System.getProperty("remoteDriverUrl", "selenoid.autotests.cloud/wd/hub");
-       // Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
+        String remoteDriverUrl = System.getProperty("remoteDriverUrl", "selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         Configuration.browserCapabilities = capabilities;
