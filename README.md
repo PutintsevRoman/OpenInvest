@@ -63,13 +63,13 @@ test
 ### :lady_beetle: Основное окно
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="src/images/Allure.png">
+<img title="Allure Overview Dashboard" src="src/images/Allure.PNG">
 </p>
 
 ### :cherries: Тесты
 
 <p align="center">
-<img title="Allure Tests" src="src/images/Tests.png">
+<img title="Allure Tests" src="src/images/Tests.PNG">
 </p>
 
 ### :cut_of_meat: Графики
