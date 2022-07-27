@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.pdftest.assertj.Assertions.assertThat;
 
 
-public class MainPageTests extends TestBase{
+public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     AnalysPage analysPage = new AnalysPage();
@@ -65,7 +65,7 @@ public class MainPageTests extends TestBase{
     @DisplayName("Тест на проверку документации Согласия на коммуникацию")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.NORMAL)
-    void testFilesContains() throws Exception{
+    void testFilesContains() throws Exception {
         mainPage.openMainPage();
         mainPage.openRegistrationForm();
         PDF pdf = mainPage.downloadComunicationFile();
@@ -76,7 +76,7 @@ public class MainPageTests extends TestBase{
     @DisplayName("Тест на проверку документации на обработку персональных данных")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.NORMAL)
-    void testFilesPersonal() throws Exception{
+    void testFilesPersonal() throws Exception {
         mainPage.openMainPage();
         mainPage.openRegistrationForm();
         PDF pdf = mainPage.downloadPersonalFile();
@@ -89,12 +89,12 @@ public class MainPageTests extends TestBase{
     @Severity(SeverityLevel.NORMAL)
     @CsvFileSource(resources = "consultationNegative.csv")
     @ParameterizedTest()
-    void testConsultationFormNegative(String LastName,String FirstName,String TelNum,Boolean LtName, Boolean FrName, Boolean TNum){
+    void testConsultationFormNegative(String LastName, String FirstName, String TelNum, Boolean LtName, Boolean FrName, Boolean TNum) {
         mainPage.openMainPage();
         mainPage.setLastNameConsultationForm(LastName);
         mainPage.setFirstNameConsultationForm(FirstName);
         mainPage.setTelNumConsultationForm(TelNum);
         mainPage.submitConsultationForm();
-        mainPage.checkNegativeConsultationForm(FrName,LtName,TNum);
+        mainPage.checkNegativeConsultationForm(FrName, LtName, TNum);
     }
 }

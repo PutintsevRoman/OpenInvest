@@ -35,6 +35,7 @@ public class MainPage {
         PDF pdf = new PDF(file);
         return pdf;
     }
+
     @Step("Загружаем согласие на Обработку персональных данных")
     public PDF downloadPersonalFile() throws Exception {
         File file = $(
@@ -48,14 +49,17 @@ public class MainPage {
     public void setFirstNameConsultationForm(String value) {
         FirstNameConsultationForm.setValue(value);
     }
+
     @Step("Устанавливаем значение Фамилии в поле")
     public void setLastNameConsultationForm(String value) {
         LastNameConsultationForm.setValue(value);
     }
+
     @Step("Устанавливаем значение Телефонного номера в поле")
     public void setTelNumConsultationForm(String value) {
         TelNumConsultationForm.setValue(value);
     }
+
     @Step("Нажимаем кнопку Отправить")
     public void submitConsultationForm() {
         $(withText("Отправить")).click();

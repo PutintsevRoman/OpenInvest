@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class AnalysPage {
 
     public SelenideElement analys = $("[data-tracker-id=0HwcTEJyrq]");
+
     @Step("Переходим с главной страницы на страницу Аналитика")
     public void openAnalysPage() {
         //analys.find(text);
