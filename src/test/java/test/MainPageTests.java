@@ -1,25 +1,34 @@
 package test;
 
-import MainPage.Main;
+import com.codeborne.pdftest.PDF;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import pages.*;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.pdftest.assertj.Assertions.assertThat;
+
 
 public class MainPageTests extends TestBase{
 
-    Main main = new Main();
+    MainPage mainPage = new MainPage();
+    AnalysPage analysPage = new AnalysPage();
+    CatalogPage catalogPage = new CatalogPage();
+    TariffPage tariffPage = new TariffPage();
+    StudyPage studyPage = new StudyPage();
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Тарифами")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void TestHeaderLinksTariff() {
-        main.OpenMainPage();
-        main.OpenTariffPage();
-        main.CheckTariffPage();
+        mainPage.openMainPage();
+        tariffPage.openTariffPage();
+        tariffPage.checkTariffPage();
     }
 
     @Test
@@ -27,9 +36,9 @@ public class MainPageTests extends TestBase{
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void TestHeaderLinksCatalog() {
-        main.OpenMainPage();
-        main.OpenCatalogPage();
-        main.CheckCatalogPage();
+        mainPage.openMainPage();
+        catalogPage.openCatalogPage();
+        catalogPage.checkCatalogPage();
     }
 
     @Test
@@ -37,9 +46,9 @@ public class MainPageTests extends TestBase{
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void TestHeaderLinksAnalys() {
-        main.OpenMainPage();
-        main.OpenAnalysPage();
-        main.CheckAnalysPage();
+        mainPage.openMainPage();
+        analysPage.openAnalysPage();
+        analysPage.checkAnalysPage();
     }
 
     @Test
@@ -47,8 +56,45 @@ public class MainPageTests extends TestBase{
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void TestHeaderLinksStudy() {
-        main.OpenMainPage();
-        main.OpenStudyPage();
-        main.CheckStudyPage();
+        mainPage.openMainPage();
+        studyPage.openStudyPage();
+        studyPage.checkStudyPage();
+    }
+
+    @Test
+    @DisplayName("Тест на проверку документации Согласия на коммуникацию")
+    @Owner("Путинцев, Роман")
+    @Severity(SeverityLevel.NORMAL)
+    void testFilesContains() throws Exception{
+        mainPage.openMainPage();
+        mainPage.openRegistrationForm();
+        PDF pdf = mainPage.downloadComunicationFile();
+        assertThat(pdf.text).contains("СОГЛАСИЕ НА КОММУНИКАЦИЮ");
+    }
+
+    @Test
+    @DisplayName("Тест на проверку документации на обработку персональных данных")
+    @Owner("Путинцев, Роман")
+    @Severity(SeverityLevel.NORMAL)
+    void testFilesPersonal() throws Exception{
+        mainPage.openMainPage();
+        mainPage.openRegistrationForm();
+        PDF pdf = mainPage.downloadPersonalFile();
+        assertThat(pdf.text).contains("СОГЛАСИЕ");
+        assertThat(pdf.text).contains("на обработку персональных данных");
+    }
+
+    @DisplayName("Несколько негативных тестов на форму для получения консультации")
+    @Owner("Путинцев, Роман")
+    @Severity(SeverityLevel.NORMAL)
+    @CsvFileSource(resources = "consultationNegative.csv")
+    @ParameterizedTest()
+    void testConsultationFormNegative(String LastName,String FirstName,String TelNum,Boolean LtName, Boolean FrName, Boolean TNum){
+        mainPage.openMainPage();
+        mainPage.setLastNameConsultationForm(LastName);
+        mainPage.setFirstNameConsultationForm(FirstName);
+        mainPage.setTelNumConsultationForm(TelNum);
+        mainPage.submitConsultationForm();
+        mainPage.checkNegativeConsultationForm(FrName,LtName,TNum);
     }
 }
