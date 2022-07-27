@@ -1,7 +1,7 @@
 # Проект по автоматизации тестирования Открытие инвестиции
 <a target="_blank" href="https://open-broker.ru/invest/">Веб сайт Открытия</a>
 
-## :drop_of_blood: Содержание:
+## :gorilla: Содержание:
 
 - [Технологии и инструменты](#earth_africa-технологии-и-инструменты)
 - [Реализованные проверки](#earth_africa-Реализованные-проверки)
@@ -11,7 +11,7 @@
 - [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
 - [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
-## :bird: Технологии и инструменты
+## :peacock: Технологии и инструменты
 
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="images/logo/Idea.svg" width="50" height="50"  alt="IDEA"/></a>
@@ -25,7 +25,7 @@
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
 </p>
 
-## :boom: Реализованные проверки
+## :octopus: Реализованные проверки
 
 - Простые UI тесты
 
@@ -34,14 +34,14 @@
 <a href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/"><img src="images/Jenkins.png" alt="Jenkins"/></a>
 </p>
 
-### :maple_leaf: Параметры сборки в Jenkins:
+### Параметры сборки в Jenkins:
 
 - browser (браузер, по умолчанию chrome)
 - version (версия браузера, по умолчанию 99.0)
 - size (размер окна браузера, по умолчанию 1920x1080)
 - remoteUrl (логин, пароль и адрес удаленного сервера selenoid)
 
-## :japanese_ogre: Запуск тестов из терминала
+## Запуск тестов из терминала
 
 Локальный запуск:
 ```
@@ -60,19 +60,19 @@ test
 
 ## <img src="images/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/allure/">Allure report</a>
 
-### :lady_beetle: Основное окно
+### Основное окно
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/Allure.PNG">
 </p>
 
-### :cherries: Тесты
+### Тесты
 
 <p align="center">
 <img title="Allure Tests" src="images/Tests.PNG">
 </p>
 
-### :cut_of_meat: Графики
+### Графики
 
 <p align="center">
 <img title="Allure Graphics" src="images/Graphs.PNG">
