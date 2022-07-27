@@ -25,7 +25,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Простой тест на проверку ссылки на страницу с Тарифами")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
-    void TestHeaderLinksTariff() {
+    void testHeaderLinksTariff() {
         mainPage.openMainPage();
         tariffPage.openTariffPage();
         tariffPage.checkTariffPage();
@@ -35,7 +35,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Простой тест на проверку ссылки на страницу с Каталогом")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
-    void TestHeaderLinksCatalog() {
+    void testHeaderLinksCatalog() {
         mainPage.openMainPage();
         catalogPage.openCatalogPage();
         catalogPage.checkCatalogPage();
@@ -45,7 +45,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Простой тест на проверку ссылки на страницу с Аналитикой")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
-    void TestHeaderLinksAnalys() {
+    void testHeaderLinksAnalys() {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
         analysPage.checkAnalysPage();
@@ -55,7 +55,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Простой тест на проверку ссылки на страницу с Обучением")
     @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
-    void TestHeaderLinksStudy() {
+    void testHeaderLinksStudy() {
         mainPage.openMainPage();
         studyPage.openStudyPage();
         studyPage.checkStudyPage();
