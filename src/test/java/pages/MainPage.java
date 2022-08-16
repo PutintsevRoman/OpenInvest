@@ -7,8 +7,10 @@ import io.qameta.allure.Step;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainPage {
 
@@ -45,6 +47,17 @@ public class MainPage {
         return pdf;
     }
 
+    @Step("Проверка документа -Согласие на коммуникацию")
+    public void checkCommunicationFile (PDF file){
+        assertThat(file.text).contains("СОГЛАСИЕ НА КОММУНИКАЦИЮ");
+    }
+
+    @Step("Проверка документа -Согласие на обработку персональных данных")
+    public void checkPersonalFile (PDF file){
+        assertThat(file.text).contains("СОГЛАСИЕ");
+        assertThat(file.text).contains("на обработку персональных данных");
+    }
+
     @Step("Устанавливаем значение Имени в поле")
     public void setFirstNameConsultationForm(String value) {
         FirstNameConsultationForm.setValue(value);
@@ -74,5 +87,20 @@ public class MainPage {
                 .$("[class =SimpleTooltip_simple-tooltip__container__JAfyH]").shouldBe(Condition.visible);
         if (TelNum) $(withText("Телефон")).parent()
                 .$("[class =SimpleTooltip_simple-tooltip__container__JAfyH]").shouldBe(Condition.visible);
+    }
+
+    @Step("Открытие доп меню")
+    public void openMenu(){
+        $(".Button_btn__iconWrapper__TQKQe").click();
+    }
+
+    @Step("Открытие страницы с Оффисами")
+    public void openOfficePage(){
+        $(byText("Офисы")).click();
+    }
+
+    @Step("Проверка страницы с Оффисами")
+    public void checkOfficePage(){
+        $$(".region").first().shouldHave(Condition.text("Абакан"));
     }
 }
