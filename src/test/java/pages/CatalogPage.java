@@ -17,6 +17,6 @@ public class CatalogPage {
 
     @Step("Проверяем, что мы находимся, на нужной странице")
     public void checkCatalogPage() {
-        $("h1").shouldHave(Condition.text("С ЧЕГО НАЧАТЬ В ИЮЛЕ"));
+        $("h1").shouldHave(Condition.text("С ЧЕГО НАЧАТЬ В АВГУСТЕ"));
     }
 }

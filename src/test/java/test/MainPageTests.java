@@ -1,6 +1,7 @@
 package test;
 
 import com.codeborne.pdftest.PDF;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import pages.*;
@@ -13,6 +14,8 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.pdftest.assertj.Assertions.assertThat;
 
 
+@Owner("Путинцев, Роман")
+@Feature("Issues")
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -23,7 +26,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Тарифами")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void testHeaderLinksTariff() {
         mainPage.openMainPage();
@@ -33,7 +35,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Каталогом")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void testHeaderLinksCatalog() {
         mainPage.openMainPage();
@@ -43,7 +44,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Аналитикой")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void testHeaderLinksAnalys() {
         mainPage.openMainPage();
@@ -53,7 +53,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Обучением")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.MINOR)
     void testHeaderLinksStudy() {
         mainPage.openMainPage();
@@ -63,7 +62,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Тест на проверку документации Согласия на коммуникацию")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.NORMAL)
     void testFilesContains() throws Exception {
         mainPage.openMainPage();
@@ -74,7 +72,6 @@ public class MainPageTests extends TestBase {
 
     @Test
     @DisplayName("Тест на проверку документации на обработку персональных данных")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.NORMAL)
     void testFilesPersonal() throws Exception {
         mainPage.openMainPage();
@@ -85,7 +82,6 @@ public class MainPageTests extends TestBase {
     }
 
     @DisplayName("Несколько негативных тестов на форму для получения консультации")
-    @Owner("Путинцев, Роман")
     @Severity(SeverityLevel.NORMAL)
     @CsvFileSource(resources = "consultationNegative.csv")
     @ParameterizedTest()
