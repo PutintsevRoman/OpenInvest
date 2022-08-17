@@ -25,4 +25,28 @@ public class EducationPageTest extends TestBase{
         studyPage.openStudyPage();
         studyPage.checkStudyPage();
     }
+
+    @Test
+    @DisplayName("Простой тест на проверку ссылки на страницу с Обучением")
+    @Severity(SeverityLevel.MINOR)
+    void testPersonalOffers() {
+        String skills[] ={"Инвестирование","Акции","Фонды","Рынок России"};
+        mainPage.openMainPage();
+        studyPage.openStudyPage();
+        studyPage.choosePersonalLevel("Начинающий");
+        studyPage.choosePersonalSkills(skills);
+        studyPage.getRecommendations();
+        studyPage.checkRecommendations();
+    }
+    @Test
+    @DisplayName("Тест на проверку количества платных курсов")
+    @Severity(SeverityLevel.MINOR)
+    void testMoneyCourses() {
+        mainPage.openMainPage();
+        studyPage.openStudyPage();
+        studyPage.getAllCourses();
+        studyPage.clickFiletCourses();
+        studyPage.chooseMoneyCourses();
+        studyPage.checkFirstMoneyCourses();
+    }
 }
