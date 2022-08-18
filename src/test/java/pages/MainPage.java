@@ -48,12 +48,12 @@ public class MainPage {
     }
 
     @Step("Проверка документа -Согласие на коммуникацию")
-    public void checkCommunicationFile (PDF file){
+    public void checkCommunicationFile(PDF file) {
         assertThat(file.text).contains("СОГЛАСИЕ НА КОММУНИКАЦИЮ");
     }
 
     @Step("Проверка документа -Согласие на обработку персональных данных")
-    public void checkPersonalFile (PDF file){
+    public void checkPersonalFile(PDF file) {
         assertThat(file.text).contains("СОГЛАСИЕ");
         assertThat(file.text).contains("на обработку персональных данных");
     }
@@ -90,17 +90,17 @@ public class MainPage {
     }
 
     @Step("Открытие доп меню")
-    public void openMenu(){
+    public void openMenu() {
         $(".Button_btn__iconWrapper__TQKQe").click();
     }
 
     @Step("Открытие страницы с Оффисами")
-    public void openOfficePage(){
+    public void openOfficePage() {
         $(byText("Офисы")).click();
     }
 
     @Step("Проверка страницы с Оффисами")
-    public void checkOfficePage(){
+    public void checkOfficePage() {
         $$(".region").first().shouldHave(Condition.text("Абакан"));
     }
 }

@@ -11,11 +11,8 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class AnalysPage {
 
-    public SelenideElement analys = $("[data-tracker-id=0HwcTEJyrq]");
-
     @Step("Переходим с главной страницы на страницу Аналитика")
     public void openAnalysPage() {
-        //analys.find(text);
         $(withText("Аналитика")).click();
 
     }
@@ -48,7 +45,7 @@ public class AnalysPage {
         $$(".CardGrid_itemInfo__kde8p").first().shouldHave(Condition.text(lasDay + " " + month));
     }
 
-    @Step("Открывть календарь дивидентов")
+    @Step("Открыть календарь дивидентов")
     public void openDividentCalendar() {
         $(byText("Календарь дивидендов")).click();
     }
@@ -68,7 +65,7 @@ public class AnalysPage {
         $(".PureInput_input__type-search__A3GDo").setValue(name).pressEnter();
     }
 
-    @Step("Поиск бумаги")
+    @Step("Поиск новости")
     public void searchNews(String name) {
         $(".Input-module__inner--Scvi1").setValue(name).pressEnter();
     }

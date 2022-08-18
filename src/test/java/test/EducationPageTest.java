@@ -1,16 +1,14 @@
 package test;
 
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.StudyPage;
 
 @Owner("Путинцев, Роман")
-@Feature("Issues")
+@Feature("Тесты на странице с Обучением")
+@Epic("UI тесты")
 public class EducationPageTest extends TestBase{
 
     MainPage mainPage = new MainPage();
@@ -27,8 +25,8 @@ public class EducationPageTest extends TestBase{
     }
 
     @Test
-    @DisplayName("Простой тест на проверку ссылки на страницу с Обучением")
-    @Severity(SeverityLevel.MINOR)
+    @DisplayName("Тест на проверку работы рекомендаций курсов")
+    @Severity(SeverityLevel.NORMAL)
     void testPersonalOffers() {
         String skills[] ={"Инвестирование","Акции","Фонды","Рынок России"};
         mainPage.openMainPage();
@@ -40,7 +38,7 @@ public class EducationPageTest extends TestBase{
     }
     @Test
     @DisplayName("Тест на проверку количества платных курсов")
-    @Severity(SeverityLevel.MINOR)
+    @Severity(SeverityLevel.NORMAL)
     void testMoneyCourses() {
         mainPage.openMainPage();
         studyPage.openStudyPage();

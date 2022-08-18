@@ -1,9 +1,6 @@
 package test;
 
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,7 +9,8 @@ import pages.MainPage;
 import pages.TariffPage;
 
 @Owner("Путинцев, Роман")
-@Feature("Issues")
+@Feature("Тесты на странице Тарифов")
+@Epic("UI тесты")
 public class TariffPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -37,8 +35,8 @@ public class TariffPageTests extends TestBase {
     }
 
 
-    @DisplayName("Проверка количества тарифов")
-    @Severity(SeverityLevel.MINOR)
+    @DisplayName("Проверка содержимого тарифов")
+    @Severity(SeverityLevel.NORMAL)
     @ValueSource(strings = {
             "Всё включено",
             "Инвестиционный",

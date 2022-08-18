@@ -1,10 +1,7 @@
 package test;
 
 
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,7 +11,8 @@ import pages.*;
 
 
 @Owner("Путинцев, Роман")
-@Feature("Issues")
+@Feature("Тесты на Основной странице")
+@Epic("UI тесты")
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();

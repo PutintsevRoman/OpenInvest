@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -17,40 +18,43 @@ public class CatalogPage {
         catalog.click();
     }
 
-    @Step("Проверяем, что мы находимся, на нужной странице")
+    @Step("Проверка, что открыта страница Каталога")
     public void checkCatalogPage() {
         $("h1").shouldHave(Condition.text("С ЧЕГО НАЧАТЬ В АВГУСТЕ"));
     }
 
     @Step("Открытие страницы с акциями")
-    public void openStocks(){
+    public void openStocks() {
         $(byText("Акции")).click();
     }
 
     @Step("Открытие страницы с облигациями")
-    public void openBonds(){
+    public void openBonds() {
         $(byText("Облигации")).click();
     }
+
     @Step("Открытие страницы с готовыми продуктами")
-    public void openSolutions(){
+    public void openSolutions() {
         $(byText("Готовые решения")).click();
     }
 
     @Step("Поиск по бумаге (Акции/Облигации)")
-    public void searchPaper(String name){
+    public void searchPaper(String name) {
         $(".PureInput_input__type-search__3yhex").setValue(name).pressEnter();
     }
+
     @Step("Проверка резульаттов поиска")
-    public void checkSearchPaper(String name){
+    public void checkSearchPaper(String name) {
         $$(".InstrumentTableItem_name__3DeE5").findBy(Condition.text(name)).shouldBe(Condition.visible);
-        }
+    }
 
     @Step("Проверка списка предложений по стратегии ИИС")
-    public void checkSolutions(){
-        $$(".InstrumentTableItem_name__3DeE5").shouldHave(texts("ИИС Облигации","ИИС Сбалансированный","ИИС Акции"));
+    public void checkSolutions() {
+        $$(".InstrumentTableItem_name__3DeE5").shouldHave(texts("ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"));
     }
+
     @Step("открыть страницу с стратегиями ИИС")
-    public void openStrategy(){
+    public void openStrategy() {
         $(byText("Стратегии ИИС")).click();
     }
 }

@@ -1,16 +1,14 @@
 package test;
 
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.CatalogPage;
 import pages.MainPage;
 
 @Owner("Путинцев, Роман")
-@Feature("Issues")
+@Feature("Тесты на странице Каталога")
+@Epic("UI тесты")
 public class CatalogPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();

@@ -18,7 +18,7 @@ public class TariffPage {
         tariff.click();
     }
 
-    @Step("Проверяем, что мы находимся, на нужной странице")
+    @Step("Проверка что открыта страница Тарифов")
     public void checkTariffPage() {
         $("h1").shouldHave(Condition.text("Тарифы"));
     }
@@ -33,19 +33,19 @@ public class TariffPage {
     }
 
     @Step("Проверка содержимого тарифа")
-    public void checkTariffContent(String testData){
+    public void checkTariffContent(String testData) {
         String id = null;
-        switch(testData){
+        switch (testData) {
             case "Всё включено":
                 id = "#all-inclusive";
                 break;
-                case "Инвестиционный":
+            case "Инвестиционный":
                 id = "#investment";
                 break;
-                case "Премиальный":
+            case "Премиальный":
                 id = "#premium";
                 break;
-                case "Спекулятивный":
+            case "Спекулятивный":
                 id = "#speculative";
                 break;
         }

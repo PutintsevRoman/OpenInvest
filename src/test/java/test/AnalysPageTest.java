@@ -1,16 +1,14 @@
 package test;
 
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.AnalysPage;
 import pages.MainPage;
 
 @Owner("Путинцев, Роман")
-@Feature("Issues")
+@Feature("Тесты на странице Аналитика")
+@Epic("UI тесты")
 public class AnalysPageTest extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -27,6 +25,8 @@ public class AnalysPageTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест на проверку выдачи новостей с периодом календаря")
+    @Severity(SeverityLevel.NORMAL)
     void testNewsCalendar() {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
@@ -37,6 +37,8 @@ public class AnalysPageTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест на проверку сортировки бумаг по Доходности")
+    @Severity(SeverityLevel.MINOR)
     void testDividentPaper() {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
@@ -46,6 +48,8 @@ public class AnalysPageTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест на проверку поиска по списку бумаг")
+    @Severity(SeverityLevel.NORMAL)
     void testDividentPaperSearch() {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
@@ -55,6 +59,8 @@ public class AnalysPageTest extends TestBase {
     }
 
     @Test
+    @DisplayName("Тест на проверку поиска по списку новостей")
+    @Severity(SeverityLevel.MINOR)
     void testNewsSearch() {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
