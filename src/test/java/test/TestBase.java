@@ -1,7 +1,9 @@
 package test;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.WebDriverProvider;
 import helpers.AllureAttachments;
 import helpers.DriverSettings;
 import helpers.DriverUtils;
@@ -11,12 +13,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.WebDriver;
+
+import static com.codeborne.selenide.Browsers.FIREFOX;
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
+
+    private static WebDriverProvider driver = new WebDriverProvider();
+
     @BeforeAll
     static void beforeAll() {
-        DriverSettings.configure();
+        driver.configure();
     }
 
     @BeforeEach
@@ -31,9 +39,10 @@ public class TestBase {
 
         AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
+        if (Configuration.browser!=FIREFOX)
         AllureAttachments.addBrowserConsoleLogs();
 
-        Selenide.closeWebDriver();
+       Selenide.closeWebDriver();
 
         AllureAttachments.addVideo(sessionId);
     }
