@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class WebDriverProvider {
 
     WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+    CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
     public void configure() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -24,12 +25,11 @@ public class WebDriverProvider {
         Configuration.browserVersion = webDriverConfig.getBrowserVersion();
 
         if (webDriverConfig.remote()) {
-            CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
             String remoteDriverUrl = System.getProperty("remoteDriverUrl", "selenoid.autotests.cloud/wd/hub");
             Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
         }
 
-        open(Configuration.baseUrl);
+       // open(Configuration.baseUrl);
     }
 
 

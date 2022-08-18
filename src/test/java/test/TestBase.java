@@ -13,9 +13,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.WebDriver;
+import java.util.Objects;
 
-import static com.codeborne.selenide.Browsers.FIREFOX;
+import static config.Browser.FIREFOX;
+
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
@@ -40,7 +41,7 @@ public class TestBase {
         AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
 
-        if (Configuration.browser!=FIREFOX)
+        if (!Objects.equals(Configuration.browser, "FIREFOX"))
         AllureAttachments.addBrowserConsoleLogs();
 
        Selenide.closeWebDriver();
