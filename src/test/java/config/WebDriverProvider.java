@@ -28,7 +28,7 @@ public class WebDriverProvider {
             String remoteDriverUrl = System.getProperty("remoteDriverUrl", "selenoid.autotests.cloud/wd/hub");
             Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
         }
-
+        Configuration.browserCapabilities = capabilities;
        // open(Configuration.baseUrl);
     }
 
