@@ -39,6 +39,7 @@ public class TestBase {
 
         AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
+
         if (Configuration.browser!=FIREFOX)
         AllureAttachments.addBrowserConsoleLogs();
 

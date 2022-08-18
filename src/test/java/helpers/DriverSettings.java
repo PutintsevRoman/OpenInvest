@@ -23,9 +23,6 @@ public class DriverSettings {
         Configuration.baseUrl = webDriverConfig.getBaseUrl();
         Configuration.browserVersion = webDriverConfig.getBrowserVersion();
 
-        if (webDriverConfig.remote()) {
-            Configuration.remote = webDriverConfig.getRemoteUrl();
-        }
 
 
         capabilities.setCapability("enableVNC", true);
