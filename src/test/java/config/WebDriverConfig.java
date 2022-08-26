@@ -10,11 +10,11 @@ public interface WebDriverConfig extends Config {
     String getBaseUrl();
 
     @Key("browser")
-    @DefaultValue("FIREFOX")
+    @DefaultValue("CHROME")
     Browser getBrowser();
 
     @Key("browserVersion")
-    @DefaultValue("98.0")
+    @DefaultValue("100.0")
     String getBrowserVersion();
 
     @Key("browserSize")
@@ -22,7 +22,7 @@ public interface WebDriverConfig extends Config {
     String getBrowserSize();
 
     @Key("isRemote")
-    @DefaultValue("True")
+    @DefaultValue("False")
     boolean remote();
 
 }

@@ -1,4 +1,4 @@
-package pages;
+package pages.ui;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.selenide.Condition;

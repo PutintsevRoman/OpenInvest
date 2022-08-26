@@ -1,15 +1,16 @@
-package test;
+package test.ui;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
-import pages.StudyPage;
+import pages.ui.MainPage;
+import pages.ui.StudyPage;
+import test.TestBase;
 
 @Owner("Путинцев, Роман")
 @Feature("Тесты на странице с Обучением")
 @Epic("UI тесты")
-public class EducationPageTest extends TestBase{
+public class EducationPageTest extends TestBase {
 
     MainPage mainPage = new MainPage();
     StudyPage studyPage = new StudyPage();

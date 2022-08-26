@@ -1,10 +1,11 @@
-package test;
+package test.ui;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.CatalogPage;
-import pages.MainPage;
+import pages.ui.CatalogPage;
+import pages.ui.MainPage;
+import test.TestBase;
 
 @Owner("Путинцев, Роман")
 @Feature("Тесты на странице Каталога")

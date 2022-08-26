@@ -1,4 +1,4 @@
-package pages;
+package pages.ui;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
