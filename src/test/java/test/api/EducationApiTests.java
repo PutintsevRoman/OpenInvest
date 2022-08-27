@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.qameta.allure.*;
 import models.AuthorisationResponseModel;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.api.EducationApiPages;
 import pages.ui.MainPage;
@@ -19,6 +21,7 @@ import java.io.IOException;
 @Owner("Путинцев, Роман")
 @Feature("Тесты на Странице с обучением")
 @Epic("API тесты")
+@Tag("API")
 public class EducationApiTests extends TestBase {
     EducationApiPages educationApiPage = new EducationApiPages();
     MainPage mainPage = new MainPage();
@@ -42,6 +45,7 @@ public class EducationApiTests extends TestBase {
     @Test
     @DisplayName("Тест на изменение Имени пользователя через UI с авторизацией с API")
     @Severity(SeverityLevel.NORMAL)
+    @Disabled
     public void changeCustomerDataTestUI() throws IOException {
         AuthorisationResponseModel authorisationResponseModel = new AuthorisationResponseModel();
         JsonNode jsonNode = educationApiPage.parseJsonCookie();
@@ -61,6 +65,7 @@ public class EducationApiTests extends TestBase {
     @Test
     @DisplayName("Тест на изменение Имени пользователя через API с авторизацией с API")
     @Severity(SeverityLevel.NORMAL)
+    @Disabled
     public void changeCustomerDataTestApi() throws IOException {
 
         ObjectNode jsonNodeBody = (ObjectNode) educationApiPage.parseJsonBody();

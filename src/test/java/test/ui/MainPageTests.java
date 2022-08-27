@@ -3,6 +3,7 @@ package test.ui;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -13,6 +14,8 @@ import test.TestBase;
 @Owner("Путинцев, Роман")
 @Feature("Тесты на Основной странице")
 @Epic("UI тесты")
+@Tag("WEB")
+@Tag("ALL")
 public class MainPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();

@@ -2,6 +2,7 @@ package test.ui;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ui.CatalogPage;
 import pages.ui.MainPage;
@@ -10,6 +11,8 @@ import test.TestBase;
 @Owner("Путинцев, Роман")
 @Feature("Тесты на странице Каталога")
 @Epic("UI тесты")
+@Tag("WEB")
+@Tag("ALL")
 public class CatalogPageTests extends TestBase {
 
     MainPage mainPage = new MainPage();

@@ -10,6 +10,7 @@ repositories {
 
 def allureVersion = "2.19.0",
     selenideVersion = "6.5.0",
+    appiumVersion = "8.0.0",
     junitVersion = "5.8.2"
 
 allure {
@@ -32,6 +33,7 @@ dependencies {
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "io.appium:java-client:$appiumVersion",
             "io.rest-assured:rest-assured:4.3.1",
             "org.aeonbits.owner:owner:1.0.12",
             "org.assertj:assertj-core:3.19.0",
@@ -49,10 +51,14 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+
 tasks.withType(Test) {
     systemProperties(System.getProperties())
-    useJUnitPlatform()
-
+    useJUnitPlatform {
+        if (System.getProperty("tag") != null && !System.getProperty("tag").isEmpty()) {
+            includeTags System.getProperty("tag")
+        }
+    }
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"
