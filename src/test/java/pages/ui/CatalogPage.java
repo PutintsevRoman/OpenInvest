@@ -45,12 +45,12 @@ public class CatalogPage {
 
     @Step("Проверка резульаттов поиска")
     public void checkSearchPaper(String name) {
-        $$(".InstrumentTableItem_name__3DeE5").findBy(Condition.text(name)).shouldBe(Condition.visible);
+        $$(".InstrumentTableItem_name__k5SGH").findBy(Condition.text(name)).shouldBe(Condition.visible);
     }
 
     @Step("Проверка списка предложений по стратегии ИИС")
     public void checkSolutions() {
-        $$(".CardsSlider_sliderWrapper__KRcvI").shouldHave(texts("ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"));
+        $$(".InstrumentCard_info__guD5z").shouldHave(texts("ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"));
     }
 
     @Step("открыть страницу с стратегиями ИИС")
