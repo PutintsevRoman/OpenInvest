@@ -45,7 +45,6 @@ public class EducationApiTests extends TestBase {
     @Test
     @DisplayName("Тест на изменение Имени пользователя через UI с авторизацией с API")
     @Severity(SeverityLevel.NORMAL)
-    @Disabled
     public void changeCustomerDataTestUI() throws IOException {
         AuthorisationResponseModel authorisationResponseModel = new AuthorisationResponseModel();
         JsonNode jsonNode = educationApiPage.parseJsonCookie();
@@ -65,7 +64,6 @@ public class EducationApiTests extends TestBase {
     @Test
     @DisplayName("Тест на изменение Имени пользователя через API с авторизацией с API")
     @Severity(SeverityLevel.NORMAL)
-    @Disabled
     public void changeCustomerDataTestApi() throws IOException {
 
         ObjectNode jsonNodeBody = (ObjectNode) educationApiPage.parseJsonBody();

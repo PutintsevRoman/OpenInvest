@@ -35,8 +35,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        //Host = System.getProperty("tag");
-        Host="Mobile";
+        Host = System.getProperty("tag");
         if(Host.equals("Mobile")) {
             setUp();
         }else

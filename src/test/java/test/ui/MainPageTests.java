@@ -40,7 +40,7 @@ public class MainPageTests extends TestBase {
 
     @DisplayName("Несколько негативных тестов на форму для получения консультации")
     @Severity(SeverityLevel.NORMAL)
-    @CsvFileSource(resources = "consultationNegative.csv")
+    @CsvFileSource(resources = "/test/consultationNegative.csv")
     @ParameterizedTest()
     void testConsultationFormNegative(String LastName, String FirstName, String TelNum, Boolean LtName, Boolean FrName, Boolean TNum) {
         mainPage.openMainPage();

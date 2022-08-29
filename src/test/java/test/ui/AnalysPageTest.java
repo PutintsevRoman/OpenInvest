@@ -58,8 +58,8 @@ public class AnalysPageTest extends TestBase {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
         analysPage.openDividentCalendar();
-        analysPage.searchPaper("Mori");
-        analysPage.checkFirstPaper("Mori");
+        analysPage.searchPaper("Новатэк");
+        analysPage.checkFirstPaper("Новатэк");
     }
 
     @Test

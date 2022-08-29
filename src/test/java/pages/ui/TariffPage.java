@@ -25,8 +25,8 @@ public class TariffPage {
 
     @Step("Проверка что тарифов 4")
     public void checkTariffLists() {
-        $$(".TariffCard_cardWrapper__24hF2").shouldHave(size(4));
-        $$(".TariffCard_cardWrapper__24hF2").shouldHave(texts("Всё включено",
+        $$(".TariffCard_cardWrapper__yIStY").shouldHave(size(4));
+        $$(".TariffCard_cardWrapper__yIStY").shouldHave(texts("Всё включено",
                 "Инвестиционный",
                 "Премиальный",
                 "Спекулятивный"));
@@ -53,8 +53,8 @@ public class TariffPage {
         assert id != null;
 
         $(id).shouldBe(Condition.visible);
-        $(id).$(".Button_btn__iconWrapper__TQKQe").click();
-        $(id).$(".Details_content__G8ley").shouldBe(Condition.visible);
+        $(id).$(".Button_btn__iconWrapper__U3QZf").click();
+        $(id).$(".Details_content__lY3Do").shouldBe(Condition.visible);
 
     }
 }

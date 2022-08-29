@@ -81,17 +81,17 @@ public class MainPage {
     @Step("Проверка правильности полученных данных")
     public void checkNegativeConsultationForm(Boolean FristName, Boolean LastName, Boolean TelNum) {
         if (FristName) $(withText("Имя")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__JAfyH]").shouldBe(Condition.visible);
+                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(Condition.visible);
 
         if (LastName) $(withText("Фамилия")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__JAfyH]").shouldBe(Condition.visible);
+                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(Condition.visible);
         if (TelNum) $(withText("Телефон")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__JAfyH]").shouldBe(Condition.visible);
+                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(Condition.visible);
     }
 
     @Step("Открытие доп меню")
     public void openMenu() {
-        $(".Button_btn__iconWrapper__TQKQe").click();
+        $(".Button_btn__iconWrapper__U3QZf").click();
     }
 
     @Step("Открытие страницы с Оффисами")

@@ -40,7 +40,7 @@ public class CatalogPage {
 
     @Step("Поиск по бумаге (Акции/Облигации)")
     public void searchPaper(String name) {
-        $(".PureInput_input__type-search__3yhex").setValue(name).pressEnter();
+        $(".PureInput_input__type-search__A3GDo").setValue(name).pressEnter();
     }
 
     @Step("Проверка резульаттов поиска")
@@ -50,7 +50,7 @@ public class CatalogPage {
 
     @Step("Проверка списка предложений по стратегии ИИС")
     public void checkSolutions() {
-        $$(".InstrumentTableItem_name__3DeE5").shouldHave(texts("ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"));
+        $$(".CardsSlider_sliderWrapper__KRcvI").shouldHave(texts("ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"));
     }
 
     @Step("открыть страницу с стратегиями ИИС")
