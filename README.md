@@ -1,9 +1,10 @@
 # Проект по автоматизации тестирования Открытие инвестиции
-<a target="_blank" href="https://open-broker.ru/invest/">Веб сайт Открытия</a>
+<a href="https://open-broker.ru/invest/"><img src="images/logo/Открытие.png" alt="OpenBroker"/></a>
+
 
 ## :gorilla: Содержание:
 
-- [Технологии и инструменты](#earth_africa-технологии-и-инструменты)
+- [Технологии и инструменты](#peacock-технологии-и-инструменты)
 - [Реализованные проверки](#earth_africa-Реализованные-проверки)
 - [Сборка в Jenkins](#earth_africa-Jenkins-job)
 - [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
@@ -22,12 +23,18 @@
 <a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="images/logo/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a>
-<a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://www.jenkins.io/"><img src="images/logo/AllureTestOps.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://www.jenkins.io/"><img src="images/logo/appium.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://www.jenkins.io/"><img src="images/logo/Rest-Assured.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://www.jenkins.io/"><img src="images/logo/androidstudio.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://www.jenkins.io/"><img src="images/logo/Browserstack.svg" width="50" height="50"  alt="Jenkins"/></a>
 </p>
 
 ## :octopus: Реализованные проверки
 
-- Простые UI тесты
+- Набор разнообразных UI тестов
+- Несколько API тестов
+- Тесты на мобильное приложение "Открытие Обучение"
 
 ## <img src="images/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/10_DikayaAV_unit13/"> job </a>
 <p align="center">
@@ -35,30 +42,56 @@
 </p>
 
 ### Параметры сборки в Jenkins:
-
+- tag (Вид тестов WEB,API,Mobile) - обязательный параметр
+- Host (Удаленно или локально) - обязательный параметр
 - browser (браузер, по умолчанию chrome)
 - version (версия браузера, по умолчанию 99.0)
 - size (размер окна браузера, по умолчанию 1920x1080)
-- remoteUrl (логин, пароль и адрес удаленного сервера selenoid)
 
 ## Запуск тестов из терминала
 
-Локальный запуск:
+Локальный запуск (UI тестов локально):
 ```
-gradle clean test
+gradle clean test -Dtag=WEB -Dremote=false 
 ```
 
-Удаленный запуск:
+Удаленный запуск с Jenkins:
 ```
 clean
 test
--DremoteDriverUrl=${Selenoid_Address}
+-Dtag=${Tag}
+-Dhost=${Host}
 -Dbrowser=${Browser}
 -DbrowserVersion=${Browser_version}
 -DbrowserSize=${Browser_Size}
 ```
+## <img src="images/logo/AllureTestOps.png" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://allure.autotests.cloud/project/1538/dashboards">Allure Test OPS</a>
 
-## <img src="images/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/allure/">Allure report</a>
+### Страница проекта
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/Первая страница.PNG">
+</p>
+
+### Страница запуска
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/Главная_страница.PNG">
+</p>
+
+### Реализованные тесты
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/Набор кейсов.PNG">
+</p>
+
+### Спсисок ошибок
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/Список ошибок.PNG">
+</p>
+
+## <img src="images/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/23/allure/">Allure report</a>
 
 ### Основное окно
 
@@ -91,4 +124,10 @@ test
 <img title="Selenoid Video" src="images/3a411e3c8853f2fb.gif" width="250" height="153"  alt="video">
 <img title="Selenoid Video" src="images/b8d6d3f36c113950.gif" width="250" height="153"  alt="video"> 
 <img title="Selenoid Video" src="images/cdbb275e1308bf2.gif" width="250" height="153"  alt="video"> 
+</p>
+
+## <img src="images/logo/Browserstack.svg" width="25" height="25"  alt="Allure"/></a> Видео прохождения мобильного теста
+
+<p align="center">
+<img title="Selenoid Video" src="images/browserstack.gif" alt="video">
 </p>
