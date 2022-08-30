@@ -23,11 +23,11 @@
 <a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="images/logo/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>
 <a href="https://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a>
-<a href="https://www.jenkins.io/"><img src="images/logo/AllureTestOps.png" width="50" height="50"  alt="Jenkins"/></a>
-<a href="https://www.jenkins.io/"><img src="images/logo/appium.png" width="50" height="50"  alt="Jenkins"/></a>
-<a href="https://www.jenkins.io/"><img src="images/logo/Rest-Assured.png" width="50" height="50"  alt="Jenkins"/></a>
-<a href="https://www.jenkins.io/"><img src="images/logo/androidstudio.png" width="50" height="50"  alt="Jenkins"/></a>
-<a href="https://www.jenkins.io/"><img src="images/logo/Browserstack.svg" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://qameta.io/"><img src="images/logo/AllureTestOps.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://appium.io/"><img src="images/logo/appium.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://rest-assured.io/"><img src="images/logo/Rest-Assured.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://developer.android.com/studio"><img src="images/logo/androidstudio.png" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://www.browserstack.com/"><img src="images/logo/Browserstack.svg" width="50" height="50"  alt="Jenkins"/></a>
 </p>
 
 ## :octopus: Реализованные проверки
@@ -83,6 +83,12 @@ test
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/Набор кейсов.PNG">
+</p>
+
+### Тест с использованием API
+
+<p align="center">
+<img title="Allure Overview Dashboard" src="images/Api.PNG">
 </p>
 
 ### Спсисок ошибок
