@@ -65,7 +65,7 @@ test
 -DbrowserVersion=${Browser_version}
 -DbrowserSize=${Browser_Size}
 ```
-## <img src="images/logo/AllureTestOps.png" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://allure.autotests.cloud/project/1538/dashboards">Allure Test OPS</a>
+## <img src="images/logo/AllureTestOps.png" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://allure.autotests.cloud/project/1538/dashboards">Allure TestOps</a>
 
 ### Страница проекта
 
