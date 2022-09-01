@@ -6,7 +6,7 @@
 
 - [Технологии и инструменты](#Technology)
 - [Реализованные проверки](#Checks)
-- [Сборка в Jenkins](#earth_africa-Jenkins-job)
+- [Сборка в Jenkins](#Jenkins)
 - [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
 - [Allure отчет](#earth_africa-Allure-отчет)
 - [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
@@ -40,7 +40,7 @@
 - Несколько API тестов
 - Тесты на мобильное приложение "Открытие Обучение"
 
-## <img src="images/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/10_DikayaAV_unit13/"> job </a>
+## <img src="images/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a><a name="Jenkins"> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/"> job </a></a>
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/"><img src="images/Jenkins.PNG" alt="Jenkins"/></a>
 </p>
