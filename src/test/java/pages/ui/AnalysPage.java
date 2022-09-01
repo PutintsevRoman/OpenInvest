@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -19,7 +20,7 @@ public class AnalysPage {
 
     @Step("Проверяем, что мы находимся, на нужной странице")
     public void checkAnalysPage() {
-        $("button.Tabs-module__tabs__button--active--2iabF").shouldHave(Condition.text("Эфир"));
+        $("button.Tabs-module__tabs__button--active--2iabF").shouldHave(text("Эфир"));
     }
 
     @Step("Открыть календарь")
@@ -42,7 +43,7 @@ public class AnalysPage {
 
     @Step("Применить значения у первой новости")
     public void checkDateNews(String month, String lasDay) {
-        $$(".CardGrid_itemInfo__kde8p").first().shouldHave(Condition.text(lasDay + " " + month));
+        $$(".CardGrid_itemInfo__kde8p").first().shouldHave(text(lasDay + " " + month));
     }
 
     @Step("Открыть календарь дивидентов")
@@ -57,7 +58,7 @@ public class AnalysPage {
 
     @Step("Проверяем первую бумагу")
     public void checkFirstPaper(String name) {
-        $$(".Table_tableCell__PtnWM").first().shouldHave(Condition.text(name));
+        $$(".Table_tableCell__PtnWM").first().shouldHave(text(name));
     }
 
     @Step("Поиск бумаги")
@@ -77,6 +78,6 @@ public class AnalysPage {
 
     @Step("Проверка новостей")
     public void checkNews(String name) {
-        $(".NewsCurrent_wrapperList__r9TN5").shouldHave(Condition.text(name));
+        $(".NewsCurrent_wrapperList__r9TN5").shouldHave(text(name));
     }
 }

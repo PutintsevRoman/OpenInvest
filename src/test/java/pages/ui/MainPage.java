@@ -7,6 +7,7 @@ import io.qameta.allure.Step;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
@@ -81,12 +82,12 @@ public class MainPage {
     @Step("Проверка правильности полученных данных")
     public void checkNegativeConsultationForm(Boolean FristName, Boolean LastName, Boolean TelNum) {
         if (FristName) $(withText("Имя")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(Condition.visible);
+                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
 
         if (LastName) $(withText("Фамилия")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(Condition.visible);
+                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
         if (TelNum) $(withText("Телефон")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(Condition.visible);
+                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
     }
 
     @Step("Открытие доп меню")
@@ -101,6 +102,6 @@ public class MainPage {
 
     @Step("Проверка страницы с Оффисами")
     public void checkOfficePage() {
-        $$(".region").first().shouldHave(Condition.text("Абакан"));
+        $$(".region").first().shouldHave(text("Абакан"));
     }
 }

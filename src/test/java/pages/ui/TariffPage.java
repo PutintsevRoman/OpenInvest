@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.CollectionCondition.texts;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -20,7 +21,7 @@ public class TariffPage {
 
     @Step("Проверка что открыта страница Тарифов")
     public void checkTariffPage() {
-        $("h1").shouldHave(Condition.text("Тарифы"));
+        $("h1").shouldHave(text("Тарифы"));
     }
 
     @Step("Проверка что тарифов 4")
@@ -52,9 +53,9 @@ public class TariffPage {
 
         assert id != null;
 
-        $(id).shouldBe(Condition.visible);
+        $(id).shouldBe(visible);
         $(id).$(".Button_btn__iconWrapper__U3QZf").click();
-        $(id).$(".Details_content__lY3Do").shouldBe(Condition.visible);
+        $(id).$(".Details_content__lY3Do").shouldBe(visible);
 
     }
 }

@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.CollectionCondition.texts;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -20,7 +21,7 @@ public class CatalogPage {
 
     @Step("Проверка, что открыта страница Каталога")
     public void checkCatalogPage() {
-        $("h1").shouldHave(Condition.text("С ЧЕГО НАЧАТЬ В АВГУСТЕ"));
+        $("h1").shouldHave(text("С ЧЕГО НАЧАТЬ В АВГУСТЕ"));
     }
 
     @Step("Открытие страницы с акциями")
@@ -45,7 +46,7 @@ public class CatalogPage {
 
     @Step("Проверка резульаттов поиска")
     public void checkSearchPaper(String name) {
-        $$(".InstrumentTableItem_name__k5SGH").findBy(Condition.text(name)).shouldBe(Condition.visible);
+        $$(".InstrumentTableItem_name__k5SGH").findBy(text(name)).shouldBe(visible);
     }
 
     @Step("Проверка списка предложений по стратегии ИИС")
