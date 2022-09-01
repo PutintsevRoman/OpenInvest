@@ -4,15 +4,17 @@
 
 ## :gorilla: Содержание:
 
-- [Технологии и инструменты](#peacock-технологии-и-инструменты)
-- [Реализованные проверки](#earth_africa-Реализованные-проверки)
+- [Технологии и инструменты](#Technology)
+- [Реализованные проверки](#Checks)
 - [Сборка в Jenkins](#earth_africa-Jenkins-job)
 - [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
 - [Allure отчет](#earth_africa-Allure-отчет)
 - [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
 - [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
 
-## :peacock: Технологии и инструменты
+<h1 align="left">
+<a name="Technology"><i>Технологии и инструменты</i></a>
+</h1>
 
 <p align="center">
 <a href="https://www.jetbrains.com/idea/"><img src="images/logo/Idea.svg" width="50" height="50"  alt="IDEA"/></a>
@@ -30,7 +32,9 @@
 <a href="https://www.browserstack.com/"><img src="images/logo/Browserstack.svg" width="50" height="50"  alt="Jenkins"/></a>
 </p>
 
-## :octopus: Реализованные проверки
+<h1 align="left">
+<a name="Checks"><i>Реализованные проверки</i></a>
+</h1>
 
 - Набор разнообразных UI тестов
 - Несколько API тестов
