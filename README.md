@@ -2,15 +2,17 @@
 <a href="https://open-broker.ru/invest/"><img src="images/logo/Открытие.png" alt="OpenBroker"/></a>
 
 
-## :gorilla: Содержание:
+## Содержание:
 
 - [Технологии и инструменты](#Technology)
 - [Реализованные проверки](#Checks)
 - [Сборка в Jenkins](#Jenkins)
-- [Запуск из терминала](#earth_africa-Запуск-тестов-из-терминала)
-- [Allure отчет](#earth_africa-Allure-отчет)
-- [Отчет в Telegram](#earth_africa-Уведомление-в-Telegram-при-помощи-бота)
-- [Видео примеры прохождения тестов](#earth_africa-Примеры-видео-о-прохождении-тестов)
+- [Запуск из терминала](#RemoteLaunch)
+- [Allure TestOps отчет](#AllureTestOps)
+- [Allure отчет](#Allure)
+- [Отчет в Telegram](#Telegram)
+- [Видео примеры прохождения тестов](#Video)
+- [Видео прохождения мобильного теста](#VideoMobile)
 
 <h1 align="left">
 <a name="Technology"><i>Технологии и инструменты</i></a>
@@ -52,7 +54,7 @@
 - version (версия браузера, по умолчанию 99.0)
 - size (размер окна браузера, по умолчанию 1920x1080)
 
-## Запуск тестов из терминала
+## <a name="RemoteLaunch">Запуск тестов из терминала</a>
 
 Локальный запуск (UI тестов локально):
 ```
@@ -69,7 +71,7 @@ test
 -DbrowserVersion=${Browser_version}
 -DbrowserSize=${Browser_Size}
 ```
-## <img src="images/logo/AllureTestOps.png" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://allure.autotests.cloud/project/1538/dashboards">Allure TestOps</a>
+## <img src="images/logo/AllureTestOps.png" width="25" height="25"  alt="Allure"/></a><a name="AllureTestOps"> Отчет в <a target="_blank" href="https://allure.autotests.cloud/project/1538/dashboards">Allure TestOps</a></a>
 
 ### Страница проекта
 
@@ -101,7 +103,7 @@ test
 <img title="Allure Overview Dashboard" src="images/Список ошибок.PNG">
 </p>
 
-## <img src="images/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/23/allure/">Allure report</a>
+## <img src="images/logo/Allure.svg" width="25" height="25"  alt="Allure"/></a><a name="Allure"> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/013_Putintsev_14_Jenkins_Telegram/23/allure/">Allure report</a></a>
 
 ### Основное окно
 
@@ -121,14 +123,14 @@ test
 <img title="Allure Graphics" src="images/Graphs.PNG">
 </p>
 
-## <img src="images/logo/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
+## <img src="images/logo/Telegram.svg" width="25" height="25"  alt="Allure"/></a><a name="Telegram"> Уведомление в Telegram при помощи бота</a>
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/Telegram.PNG" >
 </p>
 
 
-## <img src="images/logo/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Видео прохождения теста
+## <img src="images/logo/Selenoid.svg" width="25" height="25"  alt="Allure"/></a><a name="Video"> Видео прохождения теста</a>
 
 <p align="center">
 <img title="Selenoid Video" src="images/3a411e3c8853f2fb.gif" width="250" height="153"  alt="video">
@@ -136,7 +138,7 @@ test
 <img title="Selenoid Video" src="images/cdbb275e1308bf2.gif" width="250" height="153"  alt="video"> 
 </p>
 
-## <img src="images/logo/Browserstack.svg" width="25" height="25"  alt="Allure"/></a> Видео прохождения мобильного теста
+## <img src="images/logo/Browserstack.svg" width="25" height="25"  alt="Allure"/></a><a name="VideoMobile"> Видео прохождения мобильного теста</a>
 
 <p align="center">
 <img title="Selenoid Video" src="images/browserstack.gif" alt="video">
