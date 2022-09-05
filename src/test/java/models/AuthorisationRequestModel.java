@@ -1,12 +1,23 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class AuthorisationRequestModel {
-    private String access_token;
-    private String expires_in;
-    private String refresh_token;
-    private String refresh_token_expires_in;
-    private String user_id;
+
+    @JsonProperty("access_token")
+    private String accessToken;
+
+    @JsonProperty("expires_in")
+    private String expiresIn;
+
+    @JsonProperty("refresh_token")
+    private String refreshToken;
+
+    @JsonProperty("refresh_token_expires_in")
+    private String refreshTokenExpiresIn;
+
+    @JsonProperty("user_id")
+    private String userId;
 }

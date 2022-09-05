@@ -11,7 +11,14 @@ repositories {
 def allureVersion = "2.19.0",
     selenideVersion = "6.5.0",
     appiumVersion = "8.0.0",
-    junitVersion = "5.8.2"
+    junitVersion = "5.8.2",
+    restVersion = "4.3.1",
+    ownerVersion = "1.0.12",
+    assertjVersion = "3.19.0",
+    slf4jVersion = "1.7.29",
+    pdfVersion = "1.7.0",
+    webDriverManagerVersion = "5.2.3",
+    fakerVersion = "1.0.2"
 
 allure {
     report {
@@ -34,15 +41,14 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "io.appium:java-client:$appiumVersion",
-            "io.rest-assured:rest-assured:4.3.1",
-            "org.aeonbits.owner:owner:1.0.12",
-            "org.assertj:assertj-core:3.19.0",
-            "org.slf4j:slf4j-simple:1.7.29",
-            'com.codeborne:pdf-test:1.7.0',
-            'io.github.bonigarcia:webdrivermanager:5.2.3',
-            "org.junit.jupiter:junit-jupiter:$junitVersion")
-    implementation("io.qameta.allure:allure-java-commons:2.14.0")
-    implementation 'com.github.javafaker:javafaker:1.0.2'
+            "io.rest-assured:rest-assured:$restVersion",
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "org.assertj:assertj-core:$assertjVersion",
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+            "com.codeborne:pdf-test:$pdfVersion",
+            "io.github.bonigarcia:webdrivermanager:$webDriverManagerVersion",
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "com.github.javafaker:javafaker:$fakerVersion")
 }
 
 tasks.withType(JavaCompile) {

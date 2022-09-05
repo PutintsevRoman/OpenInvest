@@ -83,7 +83,6 @@ public class MainPage {
     public void checkNegativeConsultationForm(Boolean FristName, Boolean LastName, Boolean TelNum) {
         if (FristName) $(withText("Имя")).parent()
                 .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
-
         if (LastName) $(withText("Фамилия")).parent()
                 .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
         if (TelNum) $(withText("Телефон")).parent()

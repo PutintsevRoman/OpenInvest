@@ -27,7 +27,6 @@ public class WebDriverProvider {
             Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), remoteDriverUrl);
         }
         Configuration.browserCapabilities = capabilities;
-       // open(Configuration.baseUrl);
     }
 
 

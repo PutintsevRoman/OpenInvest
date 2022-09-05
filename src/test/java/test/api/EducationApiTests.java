@@ -5,11 +5,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.qameta.allure.*;
 import models.AuthorisationResponseModel;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.api.EducationApiPages;
+import api.EducationApi;
 import pages.ui.MainPage;
 import pages.ui.StudyPage;
 import test.TestBase;
@@ -23,10 +22,13 @@ import java.io.IOException;
 @Epic("API тесты")
 @Tag("API")
 public class EducationApiTests extends TestBase {
-    EducationApiPages educationApiPage = new EducationApiPages();
+    EducationApi educationApiPage = new EducationApi();
     MainPage mainPage = new MainPage();
     TestData testData = new TestData();
     StudyPage studyPage = new StudyPage();
+
+    String cookieName = "api/cookie.json";
+    String bodyJson = "api/body.json";
 
     @Test
     @DisplayName("Тест на авторизацию")
@@ -34,12 +36,12 @@ public class EducationApiTests extends TestBase {
     public void authorisationApiTest() throws IOException {
         AuthorisationResponseModel authorisationResponseModel = new AuthorisationResponseModel();
 
-        JsonNode jsonNode = educationApiPage.parseJsonCookie();
+        JsonNode jsonNode = educationApiPage.parseJson(cookieName);
         authorisationResponseModel.setCookies(educationApiPage.authorisationApi(jsonNode));
         mainPage.openMainPage();
         educationApiPage.setCookies(authorisationResponseModel.getCookies());
         studyPage.openStudyPage();
-        educationApiPage.checkAuthorisation();
+        studyPage.checkAuthorisation();
     }
 
     @Test
@@ -47,17 +49,17 @@ public class EducationApiTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     public void changeCustomerDataTestUI() throws IOException {
         AuthorisationResponseModel authorisationResponseModel = new AuthorisationResponseModel();
-        JsonNode jsonNode = educationApiPage.parseJsonCookie();
+        JsonNode jsonNode = educationApiPage.parseJson(bodyJson);
 
         authorisationResponseModel.setCookies(educationApiPage.authorisationApi(jsonNode));
 
         mainPage.openMainPage();
         educationApiPage.setCookies(authorisationResponseModel.getCookies());
         studyPage.openStudyPage();
-        educationApiPage.openCustomerRedactor();
-        educationApiPage.changeCustomerName(testData.getName());
-        educationApiPage.clickSubmit();
-        educationApiPage.checkRename();
+        studyPage.openCustomerRedactor();
+        studyPage.changeCustomerName(testData.getName());
+        studyPage.clickSubmit();
+        studyPage.checkRename();
 
     }
 
@@ -66,11 +68,11 @@ public class EducationApiTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     public void changeCustomerDataTestApi() throws IOException {
 
-        ObjectNode jsonNodeBody = (ObjectNode) educationApiPage.parseJsonBody();
+        ObjectNode jsonNodeBody = (ObjectNode) educationApiPage.parseJson(bodyJson);
         AuthorisationResponseModel authorisationResponseModel = new AuthorisationResponseModel();
         String name = testData.getName();
 
-        JsonNode jsonNode = educationApiPage.parseJsonCookie();
+        JsonNode jsonNode = educationApiPage.parseJson(cookieName);
         authorisationResponseModel.setCookies(educationApiPage.authorisationApi(jsonNode));
 
         educationApiPage.changeToken(authorisationResponseModel, jsonNodeBody);
@@ -79,8 +81,8 @@ public class EducationApiTests extends TestBase {
         mainPage.openMainPage();
         educationApiPage.setCookies(authorisationResponseModel.getCookies());
         studyPage.openStudyPage();
-        educationApiPage.openCustomerRedactor();
-        educationApiPage.checkName(name);
+        studyPage.openCustomerRedactor();
+        studyPage.checkName(name);
     }
 }
 

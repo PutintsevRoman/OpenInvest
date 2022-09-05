@@ -19,7 +19,7 @@ public class LocalMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config.URL());//"http://localhost:4723/wd/hub");
+            return new URL(config.URL());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -32,13 +32,10 @@ public class LocalMobileDriver implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName(config.os_name());//"Android");
-        options.setDeviceName(config.device());//"Pixel 4 API 30");
-        options.setPlatformVersion(config.os_version());//"11.0");
+        options.setPlatformName(config.os_name());
+        options.setDeviceName(config.device());
+        options.setPlatformVersion(config.os_version());
         options.setApp(app.getAbsolutePath());
-        //  options.setAppPackage("org.wikipedia.alpha");
-        //options.setAppActivity("org.wikipedia.main.MainActivity");
-
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
