@@ -49,7 +49,7 @@ public class EducationApiTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     public void changeCustomerDataTestUI() throws IOException {
         AuthorisationResponseModel authorisationResponseModel = new AuthorisationResponseModel();
-        JsonNode jsonNode = educationApiPage.parseJson(bodyJson);
+        JsonNode jsonNode = educationApiPage.parseJson(cookieName);
 
         authorisationResponseModel.setCookies(educationApiPage.authorisationApi(jsonNode));
 
