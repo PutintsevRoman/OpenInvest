@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorisationPage {
-
     @Step("Нажимаем на кнопку для перехода к форме авторизации")
     public void signInButton() {
         $(AppiumBy.id("ru.opentrainer.app:id/bt_welcome_sign_in")).click();
