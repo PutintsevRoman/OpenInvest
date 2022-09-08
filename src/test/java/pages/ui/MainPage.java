@@ -20,7 +20,7 @@ public class MainPage {
 
     @Step("Открываем главную страницу")
     public void openMainPage() {
-        open("https://open-broker.ru/invest/");
+        open("");
     }
 
     @Step("Открываем страницу создания счета")

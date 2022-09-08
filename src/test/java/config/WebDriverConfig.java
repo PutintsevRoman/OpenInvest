@@ -6,7 +6,7 @@ import org.aeonbits.owner.Config;
 public interface WebDriverConfig extends Config {
 
     @Key("baseUrl")
-    @DefaultValue("https://google.com")
+    @DefaultValue("https://open-broker.ru/invest/")
     String getBaseUrl();
 
     @Key("browser")

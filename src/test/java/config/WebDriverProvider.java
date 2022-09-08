@@ -7,7 +7,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 public class WebDriverProvider {
-
     WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
@@ -28,6 +27,4 @@ public class WebDriverProvider {
         }
         Configuration.browserCapabilities = capabilities;
     }
-
-
 }
