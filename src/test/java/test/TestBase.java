@@ -17,18 +17,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.util.Objects;
 
 import static com.codeborne.selenide.Selenide.open;
-
 import static helpers.Mobile_Attach.sessionId;
 import static helpers.Mobile_Attach.video;
-import static io.qameta.allure.Allure.step;
 
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
-
     private static WebDriverProvider driver = new WebDriverProvider();
     static WebDriverConfig webDriverConfig = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     static String Host;
@@ -36,17 +34,17 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         Host = System.getProperty("tag");
-        if(Host.equals("Mobile")) {
+        if (Host.equals("Mobile")) {
             setUp();
-        }else
-        driver.configure();
+        } else
+            driver.configure();
 
     }
-    public static void setUp(){
+
+    public static void setUp() {
         if (webDriverConfig.remote()) {
             Configuration.browser = BrowserstackMobileDriver.class.getName();
-        }
-        else {
+        } else {
             Configuration.browser = LocalMobileDriver.class.getName();
         }
         Configuration.browserSize = null;
@@ -56,25 +54,24 @@ public class TestBase {
     public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        if(Host.equals("Mobile")) {
+        if (Host.equals("Mobile")) {
             open();
         }
     }
 
-
     @AfterEach
     public void afterEach() {
 
-        if(Host.equals("Mobile")) {
+        if (Host.equals("Mobile")) {
             String sessionId = sessionId();
 
             Mobile_Attach.screenshotAs("Last screenshot");
             Mobile_Attach.pageSource();
 
-            step("Close driver", Selenide::closeWebDriver);
+            Selenide.closeWebDriver();
 
             if (webDriverConfig.remote()) video(sessionId);
-        }else{
+        } else {
 
             String sessionId = DriverUtils.getSessionId();
 
@@ -88,6 +85,5 @@ public class TestBase {
 
             AllureAttachments.addVideo(sessionId);
         }
-
     }
 }

@@ -6,9 +6,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.mobile.AuthorisationPage;
 import test.TestBase;
+import test.TestData;
 
-import static com.codeborne.selenide.Selenide.$;
-import static io.qameta.allure.Allure.step;
 
 @Owner("Путинцев, Роман")
 @Feature("Тесты на Странице с обучением")
@@ -16,6 +15,10 @@ import static io.qameta.allure.Allure.step;
 @Tag("Mobile")
 public class AuthorisationPageMobileTests extends TestBase {
     AuthorisationPage authorisationPage = new AuthorisationPage();
+    TestData testData = new TestData();
+    String textMessage = "Введите номер телефона";
+    String alertMessage = "Необходимо согласие на обработку персональных данных";
+    String telNum = testData.getTelNum();
 
     @Test
     @DisplayName("Тест на проверку всплывающего сообщения о незаполнености поля")
@@ -23,7 +26,7 @@ public class AuthorisationPageMobileTests extends TestBase {
     void emptyTelNumTest() {
         authorisationPage.signInButton();
         authorisationPage.authorisationButtonClick();
-        authorisationPage.emptyButtonCheck();
+        authorisationPage.emptyButtonCheck(textMessage);
     }
 
     @Test
@@ -31,9 +34,9 @@ public class AuthorisationPageMobileTests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     void emptyCommunicationCheckBoxTest() {
         authorisationPage.signInButton();
-        authorisationPage.setTelNum();
+        authorisationPage.setTelNum(telNum);
         authorisationPage.communicationCheckBoxClick();
         authorisationPage.authorisationButtonClick();
-        authorisationPage.bigMessagesCheck();
+        authorisationPage.bigMessagesCheck(alertMessage);
     }
 }

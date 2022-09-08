@@ -16,7 +16,6 @@ import test.TestBase;
 @Tag("WEB")
 @Tag("ALL")
 public class TariffPageTests extends TestBase {
-
     MainPage mainPage = new MainPage();
     TariffPage tariffPage = new TariffPage();
 
@@ -38,7 +37,6 @@ public class TariffPageTests extends TestBase {
         tariffPage.checkTariffLists();
     }
 
-
     @DisplayName("Проверка содержимого тарифов")
     @Severity(SeverityLevel.NORMAL)
     @ValueSource(strings = {
@@ -53,6 +51,4 @@ public class TariffPageTests extends TestBase {
         tariffPage.openTariffPage();
         tariffPage.checkTariffContent(testData);
     }
-
-
 }

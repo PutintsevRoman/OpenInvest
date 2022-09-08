@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class TariffPage {
-
     public SelenideElement tariff = $("[data-tracker-id=q3sP6mq3B7]");
 
     @Step("Переходим с главной страницы на страницу Тарифов")

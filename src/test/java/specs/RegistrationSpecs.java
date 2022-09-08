@@ -16,5 +16,4 @@ public class RegistrationSpecs {
     public static ResponseSpecification requestSpecificationResponse = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .build();
-
 }

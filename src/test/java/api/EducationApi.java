@@ -22,7 +22,6 @@ import static specs.RegistrationSpecs.requestSpecificationResponse;
 
 public class EducationApi {
     ClassLoader classLoader = EducationApi.class.getClassLoader();
-
     String accessToken = "access_token",
             expiresIn = "expires_in",
             refreshToken = "refresh_token",
@@ -38,12 +37,16 @@ public class EducationApi {
 
     @Step("API запрос на авторизацию, сохраняются полученные Cookie")
     public Cookies authorisationApi(JsonNode jsonNode) {
-        Cookie accessTokenCookie = new Cookie.Builder(accessToken, jsonNode.get(accessToken).asText()).build();
-        Cookie expiresInCookie = new Cookie.Builder(expiresIn, jsonNode.get(expiresIn).asText()).build();
-        Cookie refreshTokenCookie = new Cookie.Builder(refreshToken, jsonNode.get(refreshToken).asText()).build();
+        Cookie accessTokenCookie = new Cookie.Builder(accessToken,
+                jsonNode.get(accessToken).asText()).build();
+        Cookie expiresInCookie = new Cookie.Builder(expiresIn,
+                jsonNode.get(expiresIn).asText()).build();
+        Cookie refreshTokenCookie = new Cookie.Builder(refreshToken,
+                jsonNode.get(refreshToken).asText()).build();
         Cookie refreshTokenExpiresInCookie = new Cookie.Builder(refreshTokenExpiresIn,
                 jsonNode.get(refreshTokenExpiresIn).asText()).build();
-        Cookie userIdCookie = new Cookie.Builder(userId, jsonNode.get(userId).asText()).build();
+        Cookie userIdCookie = new Cookie.Builder(userId,
+                jsonNode.get(userId).asText()).build();
 
         return given()
                 .spec(requestSpecificationRequest)

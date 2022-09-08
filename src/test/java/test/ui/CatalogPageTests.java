@@ -14,10 +14,8 @@ import test.TestBase;
 @Tag("WEB")
 @Tag("ALL")
 public class CatalogPageTests extends TestBase {
-
     MainPage mainPage = new MainPage();
     CatalogPage catalogPage = new CatalogPage();
-
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Каталогом")
@@ -25,7 +23,7 @@ public class CatalogPageTests extends TestBase {
     void testHeaderLinksCatalog() {
         mainPage.openMainPage();
         catalogPage.openCatalogPage();
-        catalogPage.checkCatalogPage();
+        catalogPage.checkCatalogPage("С ЧЕГО НАЧАТЬ В СЕНТЯБРЕ");
     }
 
     @Test
@@ -37,7 +35,6 @@ public class CatalogPageTests extends TestBase {
         catalogPage.openStocks();
         catalogPage.searchPaper("Сбербанк");
         catalogPage.checkSearchPaper("Сбербанк");
-
     }
 
     @Test
@@ -49,18 +46,17 @@ public class CatalogPageTests extends TestBase {
         catalogPage.openBonds();
         catalogPage.searchPaper("ОФЗ");
         catalogPage.checkSearchPaper("ОФЗ");
-
     }
+
     @Test
     @DisplayName("Тест на проверку списка Стратегий ИИС")
     @Severity(SeverityLevel.MINOR)
     void testSolutions() {
+        String [] tariffNames = {"ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"};
         mainPage.openMainPage();
         catalogPage.openCatalogPage();
         catalogPage.openSolutions();
         catalogPage.openStrategy();
-        catalogPage.checkSolutions();
-
+        catalogPage.checkSolutions(tariffNames);
     }
-
 }

@@ -1,6 +1,5 @@
 package pages.ui;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -11,7 +10,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class AnalysPage {
-
     @Step("Переходим с главной страницы на страницу Аналитика")
     public void openAnalysPage() {
         $(withText("Аналитика")).click();
@@ -19,8 +17,8 @@ public class AnalysPage {
     }
 
     @Step("Проверяем, что мы находимся, на нужной странице")
-    public void checkAnalysPage() {
-        $("button.Tabs-module__tabs__button--active--2iabF").shouldHave(text("Эфир"));
+    public void checkAnalysPage(String name) {
+        $("button.Tabs-module__tabs__button--active--2iabF").shouldHave(text(name));
     }
 
     @Step("Открыть календарь")

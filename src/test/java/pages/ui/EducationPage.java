@@ -1,7 +1,6 @@
 package pages.ui;
 
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -10,8 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class StudyPage {
-
+public class EducationPage {
     public SelenideElement study = $("[data-tracker-id=HFDmhXuknX]");
 
     @Step("Переходим с главной страницы на страницу Обучение")
@@ -78,7 +76,7 @@ public class StudyPage {
 
     @Step("Изменение имени пользователя через UI")
     public void changeCustomerName(String name) {
-        $$("[class=PureInput_input__input__2RhRG]").first().setValue(name);
+        $$(".PureInput_input__input__2RhRG").first().setValue(name);
     }
 
     @Step("Сохранение данных")
@@ -93,7 +91,6 @@ public class StudyPage {
 
     @Step("Проверка того, что у пользователя новое Имя")
     public void checkName(String name) {
-        $$("[class=PureInput_input__input__2RhRG]").first().shouldHave(value(name));
+        $$(".PureInput_input__input__2RhRG").first().shouldHave(value(name));
     }
-
 }

@@ -1,7 +1,6 @@
 package pages.ui;
 
 import com.codeborne.pdftest.PDF;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -14,7 +13,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MainPage {
-
     public SelenideElement mainLogo = $("#Logo_titleWrapper__1sWUV"),
             FirstNameConsultationForm = $("[name=firstName]"),
             LastNameConsultationForm = $("[name=lastName]"),
@@ -49,14 +47,14 @@ public class MainPage {
     }
 
     @Step("Проверка документа -Согласие на коммуникацию")
-    public void checkCommunicationFile(PDF file) {
-        assertThat(file.text).contains("СОГЛАСИЕ НА КОММУНИКАЦИЮ");
+    public void checkCommunicationFile(PDF file, String txt) {
+        assertThat(file.text).contains(txt);
     }
 
     @Step("Проверка документа -Согласие на обработку персональных данных")
-    public void checkPersonalFile(PDF file) {
-        assertThat(file.text).contains("СОГЛАСИЕ");
-        assertThat(file.text).contains("на обработку персональных данных");
+    public void checkPersonalFile(PDF file,String txt,String txt1) {
+        assertThat(file.text).contains(txt);
+        assertThat(file.text).contains(txt1);
     }
 
     @Step("Устанавливаем значение Имени в поле")
@@ -82,11 +80,11 @@ public class MainPage {
     @Step("Проверка правильности полученных данных")
     public void checkNegativeConsultationForm(Boolean FristName, Boolean LastName, Boolean TelNum) {
         if (FristName) $(withText("Имя")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
+                .$(".SimpleTooltip_simple-tooltip__container__gF5jo").shouldBe(visible);
         if (LastName) $(withText("Фамилия")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
+                .$(".SimpleTooltip_simple-tooltip__container__gF5jo").shouldBe(visible);
         if (TelNum) $(withText("Телефон")).parent()
-                .$("[class =SimpleTooltip_simple-tooltip__container__gF5jo]").shouldBe(visible);
+                .$(".SimpleTooltip_simple-tooltip__container__gF5jo").shouldBe(visible);
     }
 
     @Step("Открытие доп меню")

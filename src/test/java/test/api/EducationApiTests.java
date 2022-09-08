@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import api.EducationApi;
 import pages.ui.MainPage;
-import pages.ui.StudyPage;
+import pages.ui.EducationPage;
 import test.TestBase;
 import test.TestData;
 
@@ -25,7 +25,7 @@ public class EducationApiTests extends TestBase {
     EducationApi educationApiPage = new EducationApi();
     MainPage mainPage = new MainPage();
     TestData testData = new TestData();
-    StudyPage studyPage = new StudyPage();
+    EducationPage educationPage = new EducationPage();
 
     String cookieName = "api/cookie.json";
     String bodyJson = "api/body.json";
@@ -40,8 +40,8 @@ public class EducationApiTests extends TestBase {
         authorisationResponseModel.setCookies(educationApiPage.authorisationApi(jsonNode));
         mainPage.openMainPage();
         educationApiPage.setCookies(authorisationResponseModel.getCookies());
-        studyPage.openStudyPage();
-        studyPage.checkAuthorisation();
+        educationPage.openStudyPage();
+        educationPage.checkAuthorisation();
     }
 
     @Test
@@ -55,11 +55,11 @@ public class EducationApiTests extends TestBase {
 
         mainPage.openMainPage();
         educationApiPage.setCookies(authorisationResponseModel.getCookies());
-        studyPage.openStudyPage();
-        studyPage.openCustomerRedactor();
-        studyPage.changeCustomerName(testData.getName());
-        studyPage.clickSubmit();
-        studyPage.checkRename();
+        educationPage.openStudyPage();
+        educationPage.openCustomerRedactor();
+        educationPage.changeCustomerName(testData.getName());
+        educationPage.clickSubmit();
+        educationPage.checkRename();
 
     }
 
@@ -80,9 +80,9 @@ public class EducationApiTests extends TestBase {
         educationApiPage.customerNameApi(authorisationResponseModel, jsonNodeBody);
         mainPage.openMainPage();
         educationApiPage.setCookies(authorisationResponseModel.getCookies());
-        studyPage.openStudyPage();
-        studyPage.openCustomerRedactor();
-        studyPage.checkName(name);
+        educationPage.openStudyPage();
+        educationPage.openCustomerRedactor();
+        educationPage.checkName(name);
     }
 }
 

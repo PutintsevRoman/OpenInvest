@@ -14,10 +14,8 @@ import test.TestBase;
 @Tag("WEB")
 @Tag("ALL")
 public class AnalysPageTest extends TestBase {
-
     MainPage mainPage = new MainPage();
     AnalysPage analysPage = new AnalysPage();
-
 
     @Test
     @DisplayName("Простой тест на проверку ссылки на страницу с Аналитикой")
@@ -25,7 +23,7 @@ public class AnalysPageTest extends TestBase {
     void testHeaderLinksAnalys() {
         mainPage.openMainPage();
         analysPage.openAnalysPage();
-        analysPage.checkAnalysPage();
+        analysPage.checkAnalysPage("Эфир");
     }
 
     @Test

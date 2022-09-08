@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class CatalogPage {
-
     public SelenideElement catalog = $("[data-tracker-id=l1n0ZEHMx9]");
 
     @Step("Переходим с главной страницы на страницу Каталог")
@@ -20,8 +19,8 @@ public class CatalogPage {
     }
 
     @Step("Проверка, что открыта страница Каталога")
-    public void checkCatalogPage() {
-        $("h1").shouldHave(text("С ЧЕГО НАЧАТЬ В АВГУСТЕ"));
+    public void checkCatalogPage(String txt) {
+        $("h1").shouldHave(text(txt));
     }
 
     @Step("Открытие страницы с акциями")
@@ -50,8 +49,8 @@ public class CatalogPage {
     }
 
     @Step("Проверка списка предложений по стратегии ИИС")
-    public void checkSolutions() {
-        $$(".InstrumentCard_info__guD5z").shouldHave(texts("ИИС Облигации", "ИИС Сбалансированный", "ИИС Акции"));
+    public void checkSolutions(String [] names) {
+        $$(".InstrumentCard_info__guD5z").shouldHave(texts(names));
     }
 
     @Step("открыть страницу с стратегиями ИИС")

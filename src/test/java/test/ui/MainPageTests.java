@@ -17,7 +17,6 @@ import test.TestBase;
 @Tag("WEB")
 @Tag("ALL")
 public class MainPageTests extends TestBase {
-
     MainPage mainPage = new MainPage();
 
     @Test
@@ -26,7 +25,7 @@ public class MainPageTests extends TestBase {
     void testFilesContains() throws Exception {
         mainPage.openMainPage();
         mainPage.openRegistrationForm();
-        mainPage.checkCommunicationFile( mainPage.downloadComunicationFile());
+        mainPage.checkCommunicationFile( mainPage.downloadComunicationFile(),"СОГЛАСИЕ НА КОММУНИКАЦИЮ");
     }
 
     @Test
@@ -35,7 +34,7 @@ public class MainPageTests extends TestBase {
     void testFilesPersonal() throws Exception {
         mainPage.openMainPage();
         mainPage.openRegistrationForm();
-        mainPage.checkPersonalFile( mainPage.downloadPersonalFile());
+        mainPage.checkPersonalFile( mainPage.downloadPersonalFile(),"СОГЛАСИЕ","на обработку персональных данных");
     }
 
     @DisplayName("Несколько негативных тестов на форму для получения консультации")
