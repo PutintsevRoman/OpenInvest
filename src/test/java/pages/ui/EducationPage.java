@@ -18,8 +18,8 @@ public class EducationPage {
     }
 
     @Step("Проверяем, что мы находимся, на нужной странице")
-    public void checkStudyPage() {
-        $("h1").shouldHave(text("ДЛЯ НАЧИНАЮЩЕГО ИНВЕСТОРА"));
+    public void checkStudyPage(String txt) {
+        $("h1").shouldHave(text(txt));
     }
 
     @Step("Выбор нужного уровеня знаний")
@@ -40,8 +40,8 @@ public class EducationPage {
     }
 
     @Step("Проверка рекомендаций")
-    public void checkRecommendations() {
-        $$(".ContentCardTemplate_contentWrapper__jXIUQ").first().shouldHave(text("Как выбрать и получить вычеты по ИИС"));
+    public void checkRecommendations(String txt) {
+        $$(".ContentCardTemplate_contentWrapper__jXIUQ").first().shouldHave(text(txt));
     }
 
     @Step("Переход на страницу с курсами")

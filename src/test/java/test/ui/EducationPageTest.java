@@ -23,7 +23,7 @@ public class EducationPageTest extends TestBase {
     void testHeaderLinksStudy() {
         mainPage.openMainPage();
         educationPage.openStudyPage();
-        educationPage.checkStudyPage();
+        educationPage.checkStudyPage("ДЛЯ НАЧИНАЮЩЕГО ИНВЕСТОРА");
     }
 
     @Test
@@ -36,7 +36,7 @@ public class EducationPageTest extends TestBase {
         educationPage.choosePersonalLevel("Начинающий");
         educationPage.choosePersonalSkills(skills);
         educationPage.getRecommendations();
-        educationPage.checkRecommendations();
+        educationPage.checkRecommendations("Как выбрать и получить вычеты по ИИС");
     }
 
     @Test

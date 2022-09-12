@@ -14,7 +14,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class LocalMobileDriver implements WebDriverProvider {
-
     static final MobileConfig config = ConfigFactory.create(MobileConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
