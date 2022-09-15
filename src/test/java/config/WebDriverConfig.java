@@ -24,5 +24,4 @@ public interface WebDriverConfig extends Config {
     @Key("isRemote")
     @DefaultValue("false")
     boolean remote();
-
 }

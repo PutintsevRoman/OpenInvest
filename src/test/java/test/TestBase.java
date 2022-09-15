@@ -38,7 +38,6 @@ public class TestBase {
             setUp();
         } else
             driver.configure();
-
     }
 
     public static void setUp() {

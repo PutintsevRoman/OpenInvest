@@ -10,7 +10,6 @@ public class CustomApiListener {
         FILTER.setResponseTemplate("response.ftl");
         return FILTER;
     }
-
 }
 
 

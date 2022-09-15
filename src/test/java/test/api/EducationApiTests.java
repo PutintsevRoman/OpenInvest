@@ -60,7 +60,6 @@ public class EducationApiTests extends TestBase {
         educationPage.changeCustomerName(testData.getName());
         educationPage.clickSubmit();
         educationPage.checkRename();
-
     }
 
     @Test

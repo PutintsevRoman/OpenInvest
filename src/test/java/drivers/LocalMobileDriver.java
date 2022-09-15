@@ -44,5 +44,4 @@ public class LocalMobileDriver implements WebDriverProvider {
         File app = new File(appPath);
         return app;
     }
-
 }
